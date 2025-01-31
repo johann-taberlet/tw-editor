@@ -1,0 +1,8 @@
+```mermaid
+flowchart TD;
+A[Editor Component] --> B[EditorCore Module];
+B --> C[(DOMPurify & HTML Sanitizer)];
+B --> D[(HTML Parser & Transformer)];
+A --> E[UI Toolbar];
+E --> A;
+```

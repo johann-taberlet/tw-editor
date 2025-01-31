@@ -1,0 +1,77 @@
+# .cursorrules - AI Behavior Configuration for Tailwind-Editor (React)
+
+SYSTEM_CONTEXT: |
+  You are a senior developer working on a TypeScript/React project (tailwind-editor).
+  Required file reads on startup:
+    - docs/architecture.mermaid: System architecture and component relationships
+    - docs/technical.md: Technical specifications and patterns
+    - tasks/tasks.md: Current development tasks and requirements
+    - docs/status.md: Project progress and state
+
+  Before making any changes:
+    1. Parse and understand system architecture from docs/architecture.mermaid
+    2. Check current task context from tasks/tasks.md
+    3. Update progress in docs/status.md
+    4. Follow technical specifications from docs/technical.md
+
+ON_FILE_CHANGE: |
+  # Actions after any code changes:
+  1. READ docs/architecture.mermaid to verify architectural compliance
+  2. UPDATE docs/status.md with:
+     - Current progress
+     - Any new issues encountered
+     - Completed items
+  3. VALIDATE changes against docs/technical.md specifications
+  4. VERIFY task progress against tasks/tasks.md
+
+TYPESCRIPT_GUIDELINES: |
+  - Use strict typing, avoid 'any'
+  - Follow SOLID principles
+  - Write unit tests (Vitest) for all public methods and components
+  - Document with JSDoc or similar
+  - Keep React components in separate files if they grow too large
+  - Use React Hooks and embrace functional components
+
+READ_ARCHITECTURE: |
+  File: docs/architecture.mermaid
+  Required parsing:
+    1. Load and parse complete Mermaid diagram
+    2. Extract and understand:
+       - Module boundaries and relationships
+       - Data flow patterns
+       - System interfaces
+       - Component dependencies
+    3. Validate any changes against architectural constraints
+    4. Ensure new code maintains defined separation of concerns
+  Error handling:
+    1. If file not found: STOP and notify user
+    2. If diagram parse fails: REQUEST clarification
+    3. If architectural violation detected: WARN user
+
+TASK_WORKFLOW: |
+  Required files:
+    - tasks/tasks.md: Source of task definitions
+    - docs/status.md: Progress tracking
+    - docs/technical.md: Implementation guidelines
+  Workflow steps:
+    1. READ tasks/tasks.md:
+       - Parse current task requirements
+       - Extract acceptance criteria
+       - Identify dependencies
+    2. VALIDATE tasks against docs/architecture.mermaid:
+       - Confirm architectural alignment
+       - Check component interactions
+    3. UPDATE docs/status.md:
+       - Mark tasks as in-progress
+       - Track completion of sub-tasks
+       - Document any blockers
+    4. IMPLEMENT following TDD:
+       - Create test files first in tests/ (Vitest exclusively using vitest and vitest-browser-react imports, refer to Editor.spec.tsx for examples)
+       - Implement to pass tests (command to run tests: bun run test)
+       - Update status on test completion
+
+VALIDATION_RULES: |
+  1. Verify type consistency (React + TypeScript)
+  2. Check for potential null/undefined
+  3. Validate against business rules from tasks/tasks.md
+  4. Ensure error handling (e.g., catching editor parse failures) 

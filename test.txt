@@ -1,0 +1,1279 @@
+[?25l
+ RUN  v3.0.4 /Users/jo/dev/perso/tw-editor
+
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should wrap single line text in a paragraph tag
+updateContent - Input: {
+  "newSelection": {
+    "end": 11,
+    "start": 11,
+  },
+  "newText": "Hello World",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should wrap single line text in a paragraph tag
+updateContent - Generated HTML: <p>Hello World</p>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should create a br tag for empty lines
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "
+",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should create a br tag for empty lines
+updateContent - Generated HTML: <br>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should handle multiple paragraphs separated by newlines
+updateContent - Input: {
+  "newSelection": {
+    "end": 32,
+    "start": 32,
+  },
+  "newText": "First paragraph
+Second paragraph",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should handle multiple paragraphs separated by newlines
+updateContent - Generated HTML: <p>First paragraph</p><p>Second paragraph</p>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should handle mixed content with empty lines
+updateContent - Input: {
+  "newSelection": {
+    "end": 33,
+    "start": 33,
+  },
+  "newText": "First paragraph
+
+Second paragraph",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > should handle mixed content with empty lines
+updateContent - Generated HTML: <p>First paragraph</p><br><p>Second paragraph</p>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve leading spaces using &nbsp;
+updateContent - Input: {
+  "newSelection": {
+    "end": 8,
+    "start": 8,
+  },
+  "newText": "   Hello",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve leading spaces using &nbsp;
+updateContent - Generated HTML: <p>&nbsp;&nbsp;&nbsp;Hello</p>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve trailing spaces using &nbsp;
+updateContent - Input: {
+  "newSelection": {
+    "end": 8,
+    "start": 8,
+  },
+  "newText": "Hello   ",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve trailing spaces using &nbsp;
+updateContent - Generated HTML: <p>Hello&nbsp;&nbsp;&nbsp;</p>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve both leading and trailing spaces
+updateContent - Input: {
+  "newSelection": {
+    "end": 9,
+    "start": 9,
+  },
+  "newText": "  Hello  ",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve both leading and trailing spaces
+updateContent - Generated HTML: <p>&nbsp;&nbsp;Hello&nbsp;&nbsp;</p>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve spaces in multiple paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 20,
+    "start": 20,
+  },
+  "newText": "  First  
+  Second  ",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should preserve spaces in multiple paragraphs
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First&nbsp;&nbsp;</p><p>&nbsp;&nbsp;Second&nbsp;&nbsp;</p>
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should handle only spaces input
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "   ",
+}
+stdout | tests/Editor.spec.tsx > Editor > Text Transformation > Whitespace Preservation > should handle only spaces input
+updateContent - Generated HTML: <br>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 10,
+    "start": 10,
+  },
+  "newText": "First line",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Generated HTML: <p>First line</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 11,
+    "start": 11,
+  },
+  "newText": "First lineE",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Generated HTML: <p>First lineE</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 12,
+    "start": 12,
+  },
+  "newText": "First lineEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Generated HTML: <p>First lineEn</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 13,
+    "start": 13,
+  },
+  "newText": "First lineEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Generated HTML: <p>First lineEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 14,
+    "start": 14,
+  },
+  "newText": "First lineEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Generated HTML: <p>First lineEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 15,
+    "start": 15,
+  },
+  "newText": "First lineEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Generated HTML: <p>First lineEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 22,
+    "start": 22,
+  },
+  "newText": "First line
+Second line",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+updateContent - Generated HTML: <p>First line</p><p>Second line</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "Hello",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Generated HTML: <p>Hello</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "HelloE",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Generated HTML: <p>HelloE</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 7,
+    "start": 7,
+  },
+  "newText": "HelloEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Generated HTML: <p>HelloEn</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 8,
+    "start": 8,
+  },
+  "newText": "HelloEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Generated HTML: <p>HelloEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 9,
+    "start": 9,
+  },
+  "newText": "HelloEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Generated HTML: <p>HelloEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 10,
+    "start": 10,
+  },
+  "newText": "HelloEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Generated HTML: <p>HelloEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "Hello",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+updateContent - Generated HTML: <p>Hello<br></p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "E",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Generated HTML: <p>E</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "En",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Generated HTML: <p>En</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "Ent",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Generated HTML: <p>Ent</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "Ente",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Generated HTML: <p>Ente</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "Enter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Generated HTML: <p>Enter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "Hello",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+updateContent - Generated HTML: <p><br>Hello</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "E",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p>E</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "En",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p>En</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "Ent",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p>Ent</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "Ente",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p>Ente</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "Enter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p>Enter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <br>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "E",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p><br>E</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "En",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p><br>En</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "Ent",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p><br>Ent</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "Ente",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p><br>Ente</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "Enter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <p><br>Enter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+updateContent - Generated HTML: <br>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "A",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>A</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "AE",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>AE</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "AEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>AEn</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "AEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>AEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "AEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>AEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "AEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>AEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "AB",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>A<br>B</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "A",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>A<br></p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "A B",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+updateContent - Generated HTML: <p>A B</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "A",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "AE",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>AE</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "AEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>AEn</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "AEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>AEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "AEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>AEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "AEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>AEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "AB",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A<br>B</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "ABE",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A<br>BE</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "ABEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A<br>BEn</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "ABEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A<br>BEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 7,
+    "start": 7,
+  },
+  "newText": "ABEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A<br>BEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 8,
+    "start": 8,
+  },
+  "newText": "ABEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A<br>BEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "ABC",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+updateContent - Generated HTML: <p>A<br>B<br>C</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 7,
+    "start": 7,
+  },
+  "newText": "One
+Two",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Generated HTML: <p>One</p><p>Two</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 8,
+    "start": 8,
+  },
+  "newText": "One
+TwoE",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Generated HTML: <p>One</p><p>TwoE</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 9,
+    "start": 9,
+  },
+  "newText": "One
+TwoEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Generated HTML: <p>One</p><p>TwoEn</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 10,
+    "start": 10,
+  },
+  "newText": "One
+TwoEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Generated HTML: <p>One</p><p>TwoEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 11,
+    "start": 11,
+  },
+  "newText": "One
+TwoEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Generated HTML: <p>One</p><p>TwoEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 12,
+    "start": 12,
+  },
+  "newText": "One
+TwoEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Generated HTML: <p>One</p><p>TwoEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Input: {
+  "newSelection": {
+    "end": 12,
+    "start": 12,
+  },
+  "newText": "One
+TwoMore",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+updateContent - Generated HTML: <p>One</p><p>Two<br>More</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "First",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>First</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 0,
+    "start": 0,
+  },
+  "newText": "",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <br>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "F",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>F</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "Fi",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>Fi</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "Fir",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>Fir</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "Firs",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>Firs</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "First",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>First</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 6,
+    "start": 6,
+  },
+  "newText": "First",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>First<br></p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 7,
+    "start": 7,
+  },
+  "newText": "Firsti",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>First<br>i</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 8,
+    "start": 8,
+  },
+  "newText": "Firstin",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>First<br>in</p>
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Input: {
+  "newSelection": {
+    "end": 9,
+    "start": 9,
+  },
+  "newText": "Firstine",
+}
+stdout | tests/Editor.spec.tsx > Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs
+updateContent - Generated HTML: <p>First<br>ine</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 10,
+    "start": 10,
+  },
+  "newText": "First line",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First line</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 11,
+    "start": 11,
+  },
+  "newText": "First lineE",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineE</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 12,
+    "start": 12,
+  },
+  "newText": "First lineEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEn</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 13,
+    "start": 13,
+  },
+  "newText": "First lineEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 14,
+    "start": 14,
+  },
+  "newText": "First lineEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 15,
+    "start": 15,
+  },
+  "newText": "First lineEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 22,
+    "start": 22,
+  },
+  "newText": "First lineSecond line",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First line<br>Second line</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 8,
+    "start": 8,
+  },
+  "newText": "Line one",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 9,
+    "start": 9,
+  },
+  "newText": "Line oneE",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line oneE</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 10,
+    "start": 10,
+  },
+  "newText": "Line oneEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line oneEn</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 11,
+    "start": 11,
+  },
+  "newText": "Line oneEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line oneEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 12,
+    "start": 12,
+  },
+  "newText": "Line oneEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line oneEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 13,
+    "start": 13,
+  },
+  "newText": "Line oneEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line oneEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 17,
+    "start": 17,
+  },
+  "newText": "Line oneLine two",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one<br>Line two</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 18,
+    "start": 18,
+  },
+  "newText": "Line oneLine twoE",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one<br>Line twoE</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 19,
+    "start": 19,
+  },
+  "newText": "Line oneLine twoEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one<br>Line twoEn</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 20,
+    "start": 20,
+  },
+  "newText": "Line oneLine twoEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one<br>Line twoEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 21,
+    "start": 21,
+  },
+  "newText": "Line oneLine twoEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one<br>Line twoEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 22,
+    "start": 22,
+  },
+  "newText": "Line oneLine twoEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one<br>Line twoEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Input: {
+  "newSelection": {
+    "end": 28,
+    "start": 28,
+  },
+  "newText": "Line oneLine twoLine three",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+updateContent - Generated HTML: <p>Line one<br>Line two<br>Line three</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Input: {
+  "newSelection": {
+    "end": 14,
+    "start": 14,
+  },
+  "newText": "  First line  ",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First line&nbsp;&nbsp;</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Input: {
+  "newSelection": {
+    "end": 15,
+    "start": 15,
+  },
+  "newText": "  First line  E",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First line  E</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Input: {
+  "newSelection": {
+    "end": 16,
+    "start": 16,
+  },
+  "newText": "  First line  En",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First line  En</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Input: {
+  "newSelection": {
+    "end": 17,
+    "start": 17,
+  },
+  "newText": "  First line  Ent",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First line  Ent</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Input: {
+  "newSelection": {
+    "end": 18,
+    "start": 18,
+  },
+  "newText": "  First line  Ente",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First line  Ente</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Input: {
+  "newSelection": {
+    "end": 19,
+    "start": 19,
+  },
+  "newText": "  First line  Enter",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First line  Enter</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Input: {
+  "newSelection": {
+    "end": 30,
+    "start": 30,
+  },
+  "newText": "  First line    Second line  ",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+updateContent - Generated HTML: <p>&nbsp;&nbsp;First line&nbsp;&nbsp;<br>&nbsp;&nbsp;Second line&nbsp;&nbsp;</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 10,
+    "start": 10,
+  },
+  "newText": "First line",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First line</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 11,
+    "start": 11,
+  },
+  "newText": "First lineE",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineE</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 12,
+    "start": 12,
+  },
+  "newText": "First lineEn",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEn</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 13,
+    "start": 13,
+  },
+  "newText": "First lineEnt",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEnt</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 14,
+    "start": 14,
+  },
+  "newText": "First lineEnte",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEnte</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 15,
+    "start": 15,
+  },
+  "newText": "First lineEnter",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First lineEnter</p>
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Input: {
+  "newSelection": {
+    "end": 22,
+    "start": 22,
+  },
+  "newText": "First lineSecond line",
+}
+stdout | tests/Editor.spec.tsx > Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+updateContent - Generated HTML: <p>First line<br>Second line</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Input: {
+  "newSelection": {
+    "end": 1,
+    "start": 1,
+  },
+  "newText": "H",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Generated HTML: <p>H</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Input: {
+  "newSelection": {
+    "end": 2,
+    "start": 2,
+  },
+  "newText": "He",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Generated HTML: <p>He</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Input: {
+  "newSelection": {
+    "end": 3,
+    "start": 3,
+  },
+  "newText": "Hel",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Generated HTML: <p>Hel</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Input: {
+  "newSelection": {
+    "end": 4,
+    "start": 4,
+  },
+  "newText": "Hell",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Generated HTML: <p>Hell</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "Hello",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should debounce onChange calls with default delay
+updateContent - Generated HTML: <p>Hello</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should respect custom debounce delay
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "Hello",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should respect custom debounce delay
+updateContent - Generated HTML: <p>Hello</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should cancel pending debounced calls on new input
+updateContent - Input: {
+  "newSelection": {
+    "end": 5,
+    "start": 5,
+  },
+  "newText": "Hello",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should cancel pending debounced calls on new input
+updateContent - Generated HTML: <p>Hello</p>
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should cancel pending debounced calls on new input
+updateContent - Input: {
+  "newSelection": {
+    "end": 11,
+    "start": 11,
+  },
+  "newText": "Hello World",
+}
+stdout | tests/Editor.spec.tsx > Editor > Debounce Behavior > should cancel pending debounced calls on new input
+updateContent - Generated HTML: <p>Hello World</p>
+ ❯ |chromium-tests| tests/Editor.spec.tsx (24 tests | 1 failed) 549ms
+   ✓ Editor > Text Transformation > should wrap single line text in a paragraph tag
+   ✓ Editor > Text Transformation > should create a br tag for empty lines
+   ✓ Editor > Text Transformation > should handle multiple paragraphs separated by newlines
+   ✓ Editor > Text Transformation > should handle mixed content with empty lines
+   ✓ Editor > Text Transformation > Whitespace Preservation > should preserve leading spaces using &nbsp;
+   ✓ Editor > Text Transformation > Whitespace Preservation > should preserve trailing spaces using &nbsp;
+   ✓ Editor > Text Transformation > Whitespace Preservation > should preserve both leading and trailing spaces
+   ✓ Editor > Text Transformation > Whitespace Preservation > should preserve spaces in multiple paragraphs
+   ✓ Editor > Text Transformation > Whitespace Preservation > should handle only spaces input
+   ✓ Editor > Enter vs Shift+Enter Behavior > should handle regular Enter with new paragraphs
+   ✓ Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at end of paragraph
+   ✓ Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter at start of paragraph
+   ✓ Editor > Enter vs Shift+Enter Behavior > should handle Shift+Enter in empty paragraph
+   ✓ Editor > Enter vs Shift+Enter Behavior > should handle backspace after Shift+Enter correctly
+   ✓ Editor > Enter vs Shift+Enter Behavior > should handle multiple Shift+Enter presses maintaining paragraph structure
+   ✓ Editor > Enter vs Shift+Enter Behavior > should maintain paragraph structure when using Shift+Enter across paragraphs
+   × Editor > Enter vs Shift+Enter Behavior > should handle mixed Enter and Shift+Enter inputs 40ms
+     → expected last "spy" call to have been called with [ '<p>First<br>line</p>' ]
+   ✓ Editor > SHIFT+ENTER Handling > should create a line break within the same paragraph when SHIFT+ENTER is pressed
+   ✓ Editor > SHIFT+ENTER Handling > should handle multiple SHIFT+ENTER presses
+   ✓ Editor > SHIFT+ENTER Handling > should preserve whitespace around SHIFT+ENTER breaks
+   ✓ Editor > SHIFT+ENTER Handling > should show visual line break in textarea when SHIFT+ENTER is pressed
+   ✓ Editor > Debounce Behavior > should debounce onChange calls with default delay
+   ✓ Editor > Debounce Behavior > should respect custom debounce delay
+   ✓ Editor > Debounce Behavior > should cancel pending debounced calls on new input
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 23 passed (24)
+   Start at  16:16:03
+   Duration  2.22s (transform 0ms, setup 0ms, collect 77ms, tests 549ms, environment 0ms, prepare 228ms)
+
+[?25h
